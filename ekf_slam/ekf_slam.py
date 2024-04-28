@@ -80,7 +80,7 @@ class ExtendedKalmanFilterSLAM:
         xs, ys, theta = self.mu[:3].ravel()
         rot1, trans, rot2 = u.ravel()
         # Update mu_pred, sigma_pred, Gt in the prediction step
-        mu_pred = np.zeros([2*self.N*3, 1])
+        mu_pred = np.zeros([2*self.N+3, 1])
         sigma_pred = np.zeros(([2*self.N+3, 2*self.N+3]))
         Gt = None
         # YOUR IMPLEMENTATION STARTS HERE
