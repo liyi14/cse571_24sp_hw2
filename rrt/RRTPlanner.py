@@ -58,11 +58,11 @@ class RRTPlanner(object):
         may be useful:
             self.eta: ratio to extend from x_near to x_rand
             bool_result = self.env.edge_validity_checker(x_near, x_new)
+        return None if edge not valid
         """
         # TODO: YOUR IMPLEMENTATION STARTS HERE
         
         # YOUR IMPLEMENTATION ENDS HERE
-        return None
 
     def sample(self, goal):
         # Sample random point from map
