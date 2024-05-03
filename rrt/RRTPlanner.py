@@ -13,16 +13,17 @@ class RRTPlanner(object):
         self.eta = eta                  # Distance to extend
 
     def Plan(self, start_config, goal_config):
-        """
-        may be useful:
-            self.max_iter: maximum number of iterations for RRT 
-            edge_id = self.tree.AddVertex(node, cost)
-            sampled_state = self.sample(target_state)
-            state_id, state = self.tree.GetNearestVertex(state)
-            new_state = self.extend(state1, state2)
-            cost = self.env.compute_distance(state1, state2)
-            self.tree.AddEdge(state_id, edge_id)
-            bool_result = self.env.goal_criterion(state)
+        """ Some utility functions you can use:
+            From RRTTree:
+                new_vertex_id = self.tree.AddVertex(node, cost))
+                self.tree.AddEdge(start_id, end_id)
+                vertex_id, vertex = self.tree.GetNearestVertex(state)
+            From RRTPlanner:
+                new_state = self.sample(target_state)
+                new_state = self.extend(state1, state2)
+            From ArmEnvironment:
+                cost = self.env.compute_distance(state1, state2
+                reached_goal = self.env.goal_criterion(state)
         """
         # Initialize an empty plan.
         goal_id = -1
