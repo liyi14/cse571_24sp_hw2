@@ -77,7 +77,7 @@ class ExtendedKalmanFilterSLAM:
         # PREDICTION #
         Fx = np.zeros((3, 3 + 2 * self.N)) # 3 for robot, 2 for each landmark
         Fx[:3, :3] = np.eye(3)
-        theta = self.mu[2]
+        theta = self.mu[2][0]
         rot1, trans, rot2 = u.ravel()
         # Update mu_pred, sigma_pred, Gt in the prediction step
         mu_pred = self.mu       # [3 + 2 * self.N, 1]
